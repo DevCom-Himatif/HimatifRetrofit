@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<HimatifResponse>, t: Throwable) {
-                Log.d("Failure", "Failure to fetch")
                 Log.d("Failure", t.message.toString())
             }
         })

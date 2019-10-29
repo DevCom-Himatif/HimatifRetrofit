@@ -1,6 +1,5 @@
 package com.rz.himatifretrofit.api
 
-import com.rz.himatifretrofit.model.AnggotaHimatif
 import com.rz.himatifretrofit.model.HimatifResponse
 import retrofit2.Call
 import retrofit2.http.GET
