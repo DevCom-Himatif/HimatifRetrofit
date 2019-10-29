@@ -20,21 +20,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val himatifService = Repository.create()
-        himatifService.getDelphi().enqueue(object : Callback<HimatifResponse>{
-            override fun onResponse(
-                call: Call<HimatifResponse>,
-                response: Response<HimatifResponse>
-            ) {
-                val data = response.body()
-                Log.d("Success", data!!.status)
-            }
-
-            override fun onFailure(call: Call<HimatifResponse>, t: Throwable) {
-                Log.d("Failure", t.message.toString())
-            }
-        })
-
         bottombar.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.menu1 -> {
@@ -54,5 +39,6 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+        bottombar.selectedItemId = R.id.menu1
     }
 }
