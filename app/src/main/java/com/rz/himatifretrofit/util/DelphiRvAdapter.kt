@@ -13,7 +13,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.rz.himatifretrofit.R
 import com.rz.himatifretrofit.model.AnggotaHimatif
 
-class DelphiRvAdapter(val ctx: Context) : RecyclerView.Adapter<DelphiRvAdapter.RvViewHolder>() {
+class DelphiRvAdapter(
+    val ctx: Context)
+    : RecyclerView.Adapter<DelphiRvAdapter.RvViewHolder>() {
+
     private var list: ArrayList<AnggotaHimatif> = arrayListOf()
 
     fun setList(anggotas : List<AnggotaHimatif>){
@@ -21,6 +24,7 @@ class DelphiRvAdapter(val ctx: Context) : RecyclerView.Adapter<DelphiRvAdapter.R
         Log.d("SetList", "Success")
         notifyDataSetChanged()
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RvViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.delphi_viewholder, parent, false)
@@ -33,6 +37,7 @@ class DelphiRvAdapter(val ctx: Context) : RecyclerView.Adapter<DelphiRvAdapter.R
         holder.nama.text = list[position].nama
         holder.npm.text = list[position].npm
         holder.email.text = list[position].email
+
         Glide.with(ctx)
             .load(list[position].url_foto)
             .apply(RequestOptions().override(72,72))
